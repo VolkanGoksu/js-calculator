@@ -42,6 +42,9 @@ class App {
       this.previousStateText.innerText = `${this.previousState} ${this.choseOperation}`
     }
   }
+  delete(){
+    this.currentState = this.currentState.toString().slice(0,-1);
+  }
 
   total() {
     let total
@@ -78,6 +81,7 @@ const equalButton = document.querySelector('[col-equals]')
 const acButton = document.querySelector('[col-clear]')
 const previousStateText = document.querySelector('[col-previous-value ]')
 const currentStateText = document.querySelector('[col-current-value]')
+const deleteButton = document.querySelector('[col-delete]');
 
 //App clasına bağlı yeni bir nesne oluşturdum
 //this oluşturulacak nesneyi ifade eder
@@ -109,4 +113,9 @@ equalButton.addEventListener('click', (button) => {
 acButton.addEventListener('click', (button) => {
   app.clear()
   app.updateDisplay()
+})
+
+deleteButton.addEventListener('click',(button)=>{
+  app.delete();
+  app.updateDisplay();
 })

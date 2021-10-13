@@ -12,6 +12,7 @@ class App {
   clear() {
     this.currentState = ''
     this.previousState = ''
+    this.choseOperation = ''
   }
   //butona tıklandığında tıklanan değeri current state atıp ekrana basıcam
   addNumber(number) {
@@ -34,7 +35,7 @@ class App {
   updateDisplay() {
     this.currentStateText.innerText = this.currentState //state tutulan değeri currentState attım;
 
-    // this.previousStateText.innerText = this.previousState state tutulan değeri previousState attım;
+    // this.previousStateText.innerText = this.previousState
     //PreviousStatede operatörü yanına getireceğim koşul
     if (this.choseOperation != null) {
       //yani seçili bir işlem operatörü varsa

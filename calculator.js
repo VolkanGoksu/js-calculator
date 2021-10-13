@@ -15,6 +15,8 @@ class App {
   }
   //butona tıklandığında tıklanan değeri current state atıp ekrana basıcam
   addNumber(number) {
+    //birden fazla , ekleme hatası includes ile olup olmadığını kontrol ederek
+    if (number === '.' && this.currentState.includes('.')) return
     this.currentState = this.currentState.toString() + number.toString()
   }
 
